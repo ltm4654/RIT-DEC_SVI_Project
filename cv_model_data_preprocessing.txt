@@ -1,0 +1,22 @@
+# Bash script to pre-process computer vision model data
+# Written by Liam Megraw, GIS technician at Rochester Institute of Technology
+# 6/10/2022
+
+# Function================================================================
+# Moves csv files containing computer vision model prediction points into one directory, then gives them simpler names. This process can be done manually, however the code speeds up the process significantly when many files exist.
+#=========================================================================
+
+# Instructions and Pre-requisites=========================================
+# Copy each line after the "$" underneath a comment in order, one at a time
+# First make sure to have bash installed. On MacOS and linux, it will be automatically included, and can simply be activated on MacOS by typing "bash" without quotes. On Windows, it must be manually installed; installing Git Bash (https://gitforwindows.org/) is somewhat straightforward and can be opened as a standalone terminal.
+#=========================================================================
+
+# Code====================================================================
+# Set directory to the directory containing sub-directories of county names; you must substitute "filepath" for the directory's path
+$ cd filepath
+
+# Move files from each sub-directory to the current directory
+$ mv */* .
+
+# Sequentially rename all files to simpler names like "pred_1", "pred_2", etc
+$ n=1; for f in ./*.csv ; do mv "$f" "pred_$((n++)).csv" ; done
