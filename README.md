@@ -6,7 +6,11 @@ README Date: 10/9/2023
 Data type: Python notebooks and a .txt file with bash code  
 Script author: Liam Megraw  
 Datasets needed to run code:  
-- iMapInvasives data for species of interest: used in the gap analysis to compare with model-predicted values
+- Model data in one to three forms:
+  - Raw CSVs: used in model_result_processing_batch to import and threshold predicted presence points and lines
+  - Imported, unthresholded panorama points: used in the gap analysis for thresholdless sums/ratios and to remove cells with no model data
+  - Thresholded predictions: used in the gap analysis for thresholded sums and ratios
+- iMapInvasives data for species of interest: used in the gap analysis to compare with model-predicted values and in priority grid cell creation to remove cells with all target species already found
   - Default data configuration: Confirmed, unconfirmed, and not detected records for Common reed grass, Japanese knotweed, Bohemian knotweed, Giant knotweed, Knotweed (species unknown), Wild Parsnip, Purple loosestrife, and Tree-of-heaven (spelling mirrors iMap spelling).
 - NYNHP Comprehensive Spatial Prioritization: used to identify high-priority grid cells
 - NY Department of Environmental Conservation Potential Environmental Justice Areas - 2022 release: used to identify high-priority grid cells
